@@ -1,0 +1,2904 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentazione relativa ai servizi REST esposti per l'accesso al servizio Agenzia delle Entrate, Cassetto digitale dell'Imprenditore, Anagrafe Nazionale Popolazione Residente e Portale Consumi.<br/><a href='https://www.cwbi.it/public/area_tecnica/cassettofiscale/2023-02-22_CASSETTO_FISCALE_SERVIZI_API_v2023.01_v2_ita.pdf' target='_blank'>Documentazione PDF API v2023.01</a>",
+    "version": "last version v2023.01",
+    "title": "CWBI Agenzia Entrate API Docs - v2023.01",
+    "termsOfService": "http://www.cwbi.it/",
+    "contact": {
+      "name": "CWBI Developer",
+      "url": "http://www.cwbi.it",
+      "email": "support-cassettofiscale@cwbi.it"
+    }
+  },
+  "host": "wwwtest.codiceweb.com",
+  "basePath": "/cassettofiscale-api/rest",
+  "tags": [
+    {
+      "name": "v202301 - Banca Italia API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - Folder Request API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - INPS API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - MyCIVIS API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - Portale API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - Portale Consumi API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - Provincia Trento API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - Sistema Tessera Sanitaria API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - Tokenize Credential API",
+      "description": "API standard v2023.01"
+    },
+    {
+      "name": "v202301 - Tokenize Credential Request API",
+      "description": "API standard v2023.01"
+    }
+  ],
+  "paths": {
+    "/v202301/bancaItalia/centraleRischiDownload1": {
+      "post": {
+        "tags": [
+          "v202301 - Banca Italia API"
+        ],
+        "summary": "API per generazione captcha centrale rischi",
+        "operationId": "centraleRischiDownload1",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfCentraleRischiDownloadStep1Request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfCentraleRischiDownloadStep1Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/bancaItalia/centraleRischiDownload2": {
+      "post": {
+        "tags": [
+          "v202301 - Banca Italia API"
+        ],
+        "summary": "API per autorizzazione captcha centrale rischi",
+        "operationId": "centraleRischiDownload2",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfCentraleRischiDownloadStep2Request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfCentraleRischiDownloadStep2Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/folderRequest/folderRequestAuthorize": {
+      "post": {
+        "tags": [
+          "v202301 - Folder Request API"
+        ],
+        "summary": "API per l'autorizzazione di una folderRequest",
+        "operationId": "folderRequestAuthorize",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfFolderRequestAuthorizeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfFolderRequestAuthorizeResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/folderRequest/folderRequestCreate": {
+      "post": {
+        "tags": [
+          "v202301 - Folder Request API"
+        ],
+        "summary": "API per la creazione di una folderRequest",
+        "operationId": "folderRequestCreate_1",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfFolderRequestCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfFolderRequestCreateResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/folderRequest/folderRequestDelete": {
+      "post": {
+        "tags": [
+          "v202301 - Folder Request API"
+        ],
+        "summary": "API per la richiesta di cancellazione di una folderRequest",
+        "operationId": "folderRequestDelete",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfFolderRequestDeleteRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfFolderRequestDeleteResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/folderRequest/folderRequestDetails": {
+      "post": {
+        "tags": [
+          "v202301 - Folder Request API"
+        ],
+        "summary": "API per la richiesta del dettaglio di una folderRequest",
+        "description": "Servizio che a fronte del autorizzazione di una folderRequestCreate, fornisce l'elenco dei docuemnti scaricati.<br/><br/>In funzione del token fornito in input, tramite il campo <b>token</b>, il servizio restituirà la lista degli item relativi al periodo indicato nella creazione della folderRequest.<br/>Nella risposta il servizio restituisce: <br/><b>additionalInfo</b> il numero di item scaricati.<br/><b>downloadSize</b> la dimensione della richiesta.<br/>Un elenco di elementi denominati <b>items</b> che contengono al loro interno i seguenti attributi: <br/><b>itemID</b> identificativo univoco dell'elemento<br/><b>name</b> nome dell'elemento<br/><b>type</b> il tipo di documento richiesto nella folderRequest<br/><b>size</b> dimensione originale dell'allegato<br/> <b>dateTime</b> data dell'allegato<br/><b>contentType</b> tipologia del documento<br/><b>status</b> lo stato del item<br/><b>additionalInfo</b> rappresentazione in formato json dei contenuti aggiuntivi (metadati)<br/><b>base64Content</b> rappresentazione del documento PDF codificato in base64.<br/><b>status</b> lo stato della richiesta.<br/><b>zipContentPresent</b> indica: <b>zipContentPresent=<i>0</i></b> non e presente nessuno zip da poter scaricare, <b>zipContentPresent=<i>1</i></b> e presente uno zip da poter scaricare. Per lo scarico dello zip bisogna comporre un url: /<b>institute</b>/folderRequestDetails-<b>token.zip</b>.",
+        "operationId": "folderRequestDetails_1",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfFolderRequestDetailsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfFolderRequestDetailsResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/folderRequest/folderRequestStatus": {
+      "post": {
+        "tags": [
+          "v202301 - Folder Request API"
+        ],
+        "summary": "API di dettaglio per lo stato di una folderRequest",
+        "operationId": "folderRequestStatus",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfFolderRequestStatusRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfFolderRequestStatusResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/folderRequest/folderRequestUserActivityDetails": {
+      "post": {
+        "tags": [
+          "v202301 - Folder Request API"
+        ],
+        "summary": "API per avere l'elenco delle attività dell'utente lato GUI",
+        "operationId": "folderRequestUserActivityDetails",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfFolderRequestUserActivityDetailsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfFolderRequestUserActivityDetailsResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/inps/contoContributivo/contoContributivoDownload": {
+      "post": {
+        "tags": [
+          "v202301 - INPS API"
+        ],
+        "summary": "API per lo scarico del estratto conto contributivo/previdenziale dal portale INPS",
+        "operationId": "contoContributivo",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfContoContributivoDownloadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfContoContributivoDownloadResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/myCivis/catastoDownload": {
+      "post": {
+        "tags": [
+          "v202301 - MyCIVIS API"
+        ],
+        "summary": "API per lo scarico delle visure catastali myCivis",
+        "operationId": "catastoDownload",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfCatastoDownloadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfCatastoDownloadResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/portale/utenzeLavoroDownload": {
+      "post": {
+        "tags": [
+          "v202301 - Portale API"
+        ],
+        "summary": "API per il recupero delle deleghe associale ad una login",
+        "description": "Servizio che a fronte delle credenziali di accesso al sito delle agenzia delle entrate, fornisce l'elenco delle utenze di lavoro. La response è strutturata in modo da elencare per ogni codiceFiscale, la lista delle partite Iva associate.",
+        "operationId": "utenzeLavoroDownload_2",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfUtenzeLavoroDownloadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfUtenzeLavoroDownloadResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/portaleConsumi/consumiEnergiaDownload": {
+      "post": {
+        "tags": [
+          "v202301 - Portale Consumi API"
+        ],
+        "summary": "API per lo scarico dei consumi energetici",
+        "operationId": "consumiEnergeticiDownload",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfConsumiEnergiaDownloadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfConsumiEnergiaDownloadResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/provinciaTrento/provinciaTrentoCatastoDownload": {
+      "post": {
+        "tags": [
+          "v202301 - Provincia Trento API"
+        ],
+        "summary": "API per lo scarico delle visure catastali Provincia Autonoma di Trento",
+        "operationId": "provinciaTrentoCatastoDownload",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfProvinciaTrentoCatastoDownloadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfProvinciaTrentoCatastoDownloadResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/sistemaTesseraSanitaria/tesseraSanitariaDownload": {
+      "post": {
+        "tags": [
+          "v202301 - Sistema Tessera Sanitaria API"
+        ],
+        "summary": "API per lo scarico della tessera sanitaria",
+        "operationId": "tesseraSanitaria",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfTesseraSanitariaDownloadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfTesseraSanitariaDownloadResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/tokenizeCredential/tokenizeCredentialCreate": {
+      "post": {
+        "tags": [
+          "v202301 - Tokenize Credential API"
+        ],
+        "summary": "API per la generazione di una richiesta di tokenizzazione delle credenziali",
+        "operationId": "tokenizeCredentialCreate",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfTokenizeCredentialCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfTokenizeCredentialCreateResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/tokenizeCredential/tokenizeCredentialDetails": {
+      "post": {
+        "tags": [
+          "v202301 - Tokenize Credential API"
+        ],
+        "summary": "API di dettaglio di una richiesta di tokenizzazione credenziali",
+        "operationId": "tokenizeCredentialDetails",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfTokenizeCredentialDetailsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfTokenizeCredentialDetailsResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/tokenizeCredentialRequest/tokenizeCredentialRequestCreate": {
+      "post": {
+        "tags": [
+          "v202301 - Tokenize Credential Request API"
+        ],
+        "summary": "API per la generazione di una richiesta di tokenizzazione",
+        "operationId": "tokenizeCredentialRequestCreate",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfTokenizeCredentialRequestCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfTokenizeCredentialRequestCreateResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/tokenizeCredentialRequest/tokenizeCredentialRequestDetails": {
+      "post": {
+        "tags": [
+          "v202301 - Tokenize Credential Request API"
+        ],
+        "summary": "API di dettaglio di una richiesta di tokenizzazione",
+        "operationId": "tokenizeCredentialRequestDetails",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfTokenizeCredentialRequestDetailsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfTokenizeCredentialRequestDetailsResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v202301/tokenizeCredentialRequest/tokenizeCredentialRequestUserActivityDetails": {
+      "post": {
+        "tags": [
+          "v202301 - Tokenize Credential Request API"
+        ],
+        "summary": "API per avere l'elenco delle attività dell'utente lato GUI",
+        "operationId": "tokenizeCredentialRequestUserActivityDetails",
+        "consumes": [
+          "application/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "description": "Request/Input",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestWrapperOfTokenizeCredentialRequestUserActivityDetailsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseWrapperOfTokenizeCredentialRequestUserActivityDetailsResponse"
+            }
+          },
+          "403": {
+            "description": "Forbidden, Invalid Security"
+          },
+          "500": {
+            "description": "System error"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "CatastoDownloadRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "type",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "type": {
+          "type": "string",
+          "example": "MYCIVIS_CATASTO_FABBRICATO_PLANIMETRIA",
+          "description": "valori ammessi: MYCIVIS_CATASTO_FABBRICATO_PLANIMETRIA | MYCIVIS_CATASTO_FABBRICATO_VISURA | MYCIVIS_CATASTO_FONDIARIO_VISURA | MYCIVIS_CATASTO_FONDIARIO_LIBRO"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoro"
+        }
+      },
+      "title": "CatastoDownloadRequest"
+    },
+    "CatastoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatastoDownloadResponseItem"
+          }
+        }
+      },
+      "title": "CatastoDownloadResponse"
+    },
+    "CatastoDownloadResponseItem": {
+      "type": "object",
+      "properties": {
+        "additionalInfo": {
+          "type": "object"
+        },
+        "base64Content": {
+          "type": "string"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "itemID": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "CatastoDownloadResponseItem"
+    },
+    "CentraleRischiDownloadStep1Request": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoro"
+        }
+      },
+      "title": "CentraleRischiDownloadStep1Request"
+    },
+    "CentraleRischiDownloadStep1Response": {
+      "type": "object",
+      "properties": {
+        "base64Content": {
+          "type": "string"
+        },
+        "companyId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "idToken": {
+          "type": "string"
+        }
+      },
+      "title": "CentraleRischiDownloadStep1Response"
+    },
+    "CentraleRischiDownloadStep2Request": {
+      "type": "object",
+      "required": [
+        "captcha",
+        "idCompany",
+        "idToken",
+        "info",
+        "institute"
+      ],
+      "properties": {
+        "captcha": {
+          "type": "string"
+        },
+        "idCompany": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "idToken": {
+          "type": "string"
+        },
+        "info": {
+          "$ref": "#/definitions/CentraleRischiRequestedInfo"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        }
+      },
+      "title": "CentraleRischiDownloadStep2Request"
+    },
+    "CentraleRischiDownloadStep2Response": {
+      "type": "object",
+      "properties": {
+        "base64Content": {
+          "type": "string"
+        }
+      },
+      "title": "CentraleRischiDownloadStep2Response"
+    },
+    "CentraleRischiRequestedInfo": {
+      "type": "object",
+      "required": [
+        "capresrich",
+        "codcomuneresrich",
+        "codcomunesedelegale",
+        "codicefiscale",
+        "comunenascitarich",
+        "comuneresrich",
+        "comunesedelegale",
+        "dateContabiliA",
+        "dateContabiliDA",
+        "denominazione",
+        "email",
+        "indirizzoresrich",
+        "nazionenascitarich",
+        "nazioneresrich",
+        "nazionesedelegale",
+        "ncivresrich",
+        "procconcorsincorso",
+        "provincianascitarich",
+        "provinciaresrich",
+        "provinciasedelegale",
+        "ruolorichiedente",
+        "telefono"
+      ],
+      "properties": {
+        "capresrich": {
+          "type": "string"
+        },
+        "codcomuneresrich": {
+          "type": "string"
+        },
+        "codcomunesedelegale": {
+          "type": "string"
+        },
+        "codicefiscale": {
+          "type": "string"
+        },
+        "comunenascitarich": {
+          "type": "string"
+        },
+        "comuneresrich": {
+          "type": "string"
+        },
+        "comunesedelegale": {
+          "type": "string"
+        },
+        "dateContabiliA": {
+          "type": "string",
+          "format": "date"
+        },
+        "dateContabiliDA": {
+          "type": "string",
+          "format": "date"
+        },
+        "denominazione": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "indirizzoresrich": {
+          "type": "string"
+        },
+        "nazionenascitarich": {
+          "type": "string"
+        },
+        "nazioneresrich": {
+          "type": "string"
+        },
+        "nazionesedelegale": {
+          "type": "string"
+        },
+        "ncivresrich": {
+          "type": "string"
+        },
+        "procconcorsdescr": {
+          "type": "string"
+        },
+        "procconcorsincorso": {
+          "type": "string"
+        },
+        "provincianascitarich": {
+          "type": "string"
+        },
+        "provinciaresrich": {
+          "type": "string"
+        },
+        "provinciasedelegale": {
+          "type": "string"
+        },
+        "ruolorichiedente": {
+          "type": "string"
+        },
+        "telefono": {
+          "type": "string"
+        }
+      },
+      "title": "CentraleRischiRequestedInfo"
+    },
+    "ConsumiEnergiaDownloadRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "type",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "type": {
+          "type": "string",
+          "example": "CONSUMI_ENERGETICI",
+          "description": "valori ammessi: CONSUMI_ENERGETICI"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoro"
+        }
+      },
+      "title": "ConsumiEnergiaDownloadRequest"
+    },
+    "ConsumiEnergiaDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ConsumiEnergiaDownloadResponseItem"
+          }
+        }
+      },
+      "title": "ConsumiEnergiaDownloadResponse"
+    },
+    "ConsumiEnergiaDownloadResponseItem": {
+      "type": "object",
+      "properties": {
+        "additionalInfo": {
+          "type": "object"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "itemID": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "ConsumiEnergiaDownloadResponseItem"
+    },
+    "ContoContributivoDownloadRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "type",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "includeBase64Content": {
+          "type": "string",
+          "example": 0,
+          "description": "flag per includere il contenuto in base64 nella risposta. [0(=default), 1]"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "type": {
+          "type": "string",
+          "example": "INPS_CONTO_CONTRIBUTIVO",
+          "description": "valori ammessi: INPS_CONTO_CONTRIBUTIVO"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoro"
+        }
+      },
+      "title": "ContoContributivoDownloadRequest"
+    },
+    "ContoContributivoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContoContributivoDownloadResponseItem"
+          }
+        }
+      },
+      "title": "ContoContributivoDownloadResponse"
+    },
+    "ContoContributivoDownloadResponseItem": {
+      "type": "object",
+      "properties": {
+        "additionalInfo": {
+          "type": "object"
+        },
+        "base64Content": {
+          "type": "string"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "itemID": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "ContoContributivoDownloadResponseItem"
+    },
+    "CredenzialiAccesso": {
+      "type": "object",
+      "required": [
+        "login",
+        "password1",
+        "password2",
+        "type"
+      ],
+      "properties": {
+        "login": {
+          "type": "string",
+          "example": "Login123",
+          "description": "Login dell'utente"
+        },
+        "password1": {
+          "type": "string",
+          "example": "Password123",
+          "description": "Password di primo livello"
+        },
+        "password2": {
+          "type": "string",
+          "example": "012345",
+          "description": "Password di secondo livello (PIN o OTP SPID. Nel caso di SPID è possibile utilizzare il pattern OTP + '/' + ID Dispositivo)."
+        },
+        "type": {
+          "type": "string",
+          "example": "FISCONLINE",
+          "description": "Tipologia di credenziali. Valori possibili FISCONLINE, SPID/{PROVIDER_ID}. (Esempio SPID/ARUBA, SPID/NAMIRIAL, SPID/INFOCERT, SPID/POSTE, SPID/SIELTE, etc...)"
+        }
+      },
+      "title": "CredenzialiAccesso"
+    },
+    "FolderRequestAuthorizeRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "portalID",
+        "token"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "portalID": {
+          "type": "string",
+          "example": "AGENZIA_ENTRATE",
+          "description": "identificativo del portale di riferimento [AGENZIA_ENTRATE, IMPRESA_ITALIA], esempio AGENZIA_ENTRATE"
+        },
+        "token": {
+          "type": "string",
+          "example": "token",
+          "description": "identificativo univoco della richiesta creata, restituito dal servizio di creazione della richiesta"
+        }
+      },
+      "title": "FolderRequestAuthorizeRequest"
+    },
+    "FolderRequestAuthorizeResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestAuthorizeResponse"
+    },
+    "FolderRequestCreateRequest": {
+      "type": "object",
+      "required": [
+        "companyType",
+        "descrizione",
+        "finalita",
+        "folderID",
+        "institute",
+        "items",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "companyType": {
+          "type": "string",
+          "example": "PF",
+          "description": "indentificativo tipo soggetto: [PF (persona fisica), PG (persona giuridica)]"
+        },
+        "descrizione": {
+          "type": "string",
+          "example": "descrizione",
+          "description": "descrizione della richiesta"
+        },
+        "expirationDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "proprieta per indicare la data entro la quale la richiesta è valida. Nel caso in cui non viene specificato verranno presi come riferimento 30 giorni di validità. La richiesta sarà attiva fino alla mezzanotte della data inserita."
+        },
+        "finalita": {
+          "type": "string",
+          "example": "finalita",
+          "description": "finalità del trattamento"
+        },
+        "folderID": {
+          "type": "string",
+          "example": "pratica 296",
+          "description": "proprieta per specificare un riferimento del chiamante per la pratica che si sta creando"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "items": {
+          "type": "array",
+          "description": "Lista di richieste",
+          "items": {
+            "$ref": "#/definitions/FolderRequestCreateRequestItem"
+          }
+        },
+        "notificationURL": {
+          "type": "string",
+          "example": "https://server2server.site/{token}/{folderRequestStatus}",
+          "description": "proprieta per indicare l'url al quale notificare il partner l'esito della richiesta. Accetta in input dei placeholder tra cui: {token} e {folderRequestStatus}."
+        },
+        "redirectURL": {
+          "type": "string",
+          "example": "https://webpartner.site/{token}/{folderRequestStatus}",
+          "description": "proprieta per indicare l'url al quale effettuare il redirect del browser a completamento di un autorizzazione via interfaccia web. Accetta in input dei placeholder tra cui: {token} e {folderRequestStatus}."
+        },
+        "utenteDescrizione": {
+          "type": "string",
+          "example": "utente",
+          "description": "descrizioni del utente"
+        },
+        "utenteEmail": {
+          "type": "string",
+          "example": "esempio@gmail.com",
+          "description": "email del utente"
+        },
+        "utenteLanguage": {
+          "type": "string",
+          "example": "it",
+          "description": "it | de | en"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoroAdE"
+        }
+      },
+      "title": "FolderRequestCreateRequest"
+    },
+    "FolderRequestCreateRequestItem": {
+      "type": "object",
+      "required": [
+        "fromDate",
+        "toDate",
+        "type"
+      ],
+      "properties": {
+        "fromDate": {
+          "type": "string",
+          "format": "date",
+          "example": "2020-12-01",
+          "description": "intervallo di dataDA per lo scarico degli item"
+        },
+        "includeBase64Content": {
+          "type": "string",
+          "example": 0,
+          "description": "flag per includere il contenuto in base64 nella risposta. [0(=default), 1, 2]"
+        },
+        "toDate": {
+          "type": "string",
+          "format": "date",
+          "example": "2021-01-01",
+          "description": "intervallo di dataA per lo scarico degli item"
+        },
+        "type": {
+          "type": "string",
+          "example": "FATTURA_EMESSA_ITA",
+          "description": "valori ammessi: FATTURA_EMESSA_ITA | FATTURA_RICEVUTA_ITA | FATTURA_EMESSA_ESTERO | FATTURA_RICEVUTA_ESTERO | F23 | F24 | CORRISPETTIVO_ALL | CORRISPETTIVO_RT | CORRISPETTIVO_DA | CORRISPETTIVO_MC | CORRISPETTIVO_DC | CORRISPETTIVO_RC | MOD_730 | MOD_730_PRE | MOD_750 | MOD_760 | MOD_770 | MOD_IVA | MOD_IRA | MOD_UNI | MOD_UNI_PRE | MOD_CUK | CREDITI_MON_T (crediti monitoraggio tracciabile) | CREDITI_MON_NT (crediti monitoraggio non tracciabile) | CREDITI_LISTA_T (crediti lista tracciabile) | CREDITI_LISTA_NT (crediti lista non tracciabile) | CREDITI_CESS_T (crediti cessione tracciabile) | CREDITI_CESS_NT (crediti cessione non tracciabile) | CREDITI_ACC_T (crediti accettazione tracciabile) | CREDITI_ACC_NT (crediti accettazione non tracciabile) | CREDITI_ACC_F24 (crediti accettazione scelta f24) | STST (modello ISA) | STES (esito ISA) | STFA (prospetto pluriennale) | VISURA_CATASTALE_ANALITICA | VISURA_CATASTALE_SINTETICA | VISURA_CATASTALE_IMMOBILE | VISURA_CATASTALE_PLANIMETRICA | VISURA_CATASTALE_MAPPA | ISPEZIONE_IPOTECARIA_NOTE | ISPEZIONE_IPOTECARIA_TITOLO | ISPEZIONE_IPOTECARIA_DOCUMENTI | ISPEZIONE_IPOTECARIA_ELENCO | ATTO_ALL | ATTO_A01 | ATTO_A02 | ATTO_A03 | ATTO_A04 | ATTO_A05 | ATTO_A06 | ATTO_A07 | ATTO_A08 | ATTO_A09 | ATTO_A10 | ATTO_A11 | ATTO_A12 | ATTO_A13 | ATTO_A14 | ATTO_A15 | ATTO_A16A17 | ATTO_A18 | ATTO_A19 | ATTO_A20 | ATTO_A22 | ATTO_A23 | ATTO_A99 | ATTO_X_5XX | ATTO_X_7XX | ATTO_ST | VISURA_AZIENDA_ORDINARIA | VISURA_AZIENDA_AMMINISTRATORI | VISURA_AZIENDA_SOCI | VISURA_AZIENDA_ORDINARIA_EN | VISURA_AZIENDA_STORICA | VISURA_AZIENDA_BLCCOS | VISURA_AZIENDA_BLCPAR | VISURA_AZIENDA_BLCSOS | VISURA_AZIENDA_BLCSPA | VISURA_AZIENDA_BLCSTO | FIRMATARIO_DICHSOST | BILANCIO_ALL | BILANCIO_700 | BILANCIO_710 | BILANCIO_711 | BILANCIO_712 | BILANCIO_713 | BILANCIO_714 | BILANCIO_715 | BILANCIO_716 | BILANCIO_717 | BILANCIO_718 | BILANCIO_720 | BILANCIO_721 | BILANCIO_722 | BILANCIO_730 | MYCIVIS_CATASTO_FABBRICATO_PLANIMETRIA | MYCIVIS_CATASTO_FABBRICATO_VISURA | MYCIVIS_CATASTO_FONDIARIO_VISURA | MYCIVIS_CATASTO_FONDIARIO_LIBRO"
+        }
+      },
+      "title": "FolderRequestCreateRequestItem"
+    },
+    "FolderRequestCreateResponse": {
+      "type": "object",
+      "properties": {
+        "expirationDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "folderRequestURL": {
+          "type": "string"
+        },
+        "portalIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestCreateResponse"
+    },
+    "FolderRequestDeleteRequest": {
+      "type": "object",
+      "required": [
+        "institute",
+        "token"
+      ],
+      "properties": {
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "token": {
+          "type": "string",
+          "example": "token",
+          "description": "identificativo univoco della richiesta creata, restituito dal servizio di creazione della richiesta"
+        }
+      },
+      "title": "FolderRequestDeleteRequest"
+    },
+    "FolderRequestDeleteResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestDeleteResponse"
+    },
+    "FolderRequestDetailsRequest": {
+      "type": "object",
+      "required": [
+        "institute",
+        "token"
+      ],
+      "properties": {
+        "downloadIfCompleted": {
+          "type": "string",
+          "example": 0,
+          "description": "flag per autorizzare e scaricare i documenti recuperati dalla folderRequest [0(=default), 1]"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "token": {
+          "type": "string",
+          "example": "token",
+          "description": "identificativo univoco della richiesta creata, restituito dal servizio di creazione della richiesta"
+        }
+      },
+      "title": "FolderRequestDetailsRequest"
+    },
+    "FolderRequestDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "authorizedFrom": {
+          "type": "string"
+        },
+        "downloadElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "downloadSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FolderRequestDetailsResponseItem"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "zipContentPresent": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestDetailsResponse"
+    },
+    "FolderRequestDetailsResponseItem": {
+      "type": "object",
+      "properties": {
+        "downloadElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "downloadSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "fromDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "includeBase64Content": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FolderRequestDetailsResponseItemItem"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "toDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestDetailsResponseItem"
+    },
+    "FolderRequestDetailsResponseItemItem": {
+      "type": "object",
+      "properties": {
+        "additionalInfo": {
+          "type": "object"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "itemID": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestDetailsResponseItemItem"
+    },
+    "FolderRequestStatusRequest": {
+      "type": "object",
+      "required": [
+        "institute",
+        "token"
+      ],
+      "properties": {
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "token": {
+          "type": "string",
+          "example": "token",
+          "description": "identificativo univoco della richiesta creata, restituito dal servizio di creazione della richiesta"
+        }
+      },
+      "title": "FolderRequestStatusRequest"
+    },
+    "FolderRequestStatusResponse": {
+      "type": "object",
+      "properties": {
+        "authorizedFrom": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FolderRequestStatusResponseItem"
+          }
+        },
+        "pendingPortalIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestStatusResponse"
+    },
+    "FolderRequestStatusResponseItem": {
+      "type": "object",
+      "properties": {
+        "fromDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "status": {
+          "type": "string"
+        },
+        "toDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestStatusResponseItem"
+    },
+    "FolderRequestUserActivityDetailsRequest": {
+      "type": "object",
+      "required": [
+        "institute",
+        "token"
+      ],
+      "properties": {
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "token": {
+          "type": "string",
+          "example": "token",
+          "description": "identificativo univoco della richiesta creata, restituito dal servizio di creazione della richiesta"
+        }
+      },
+      "title": "FolderRequestUserActivityDetailsRequest"
+    },
+    "FolderRequestUserActivityDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "authorizedFrom": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserActivityAdditionalInfoBean"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "FolderRequestUserActivityDetailsResponse"
+    },
+    "MessageBean": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        }
+      },
+      "title": "MessageBean"
+    },
+    "ProvinciaTrentoCatastoDownloadRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "type",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "type": {
+          "type": "string",
+          "example": "PROVINCIA_TN_CATASTO_FABBRICATO_PLANIMETRIA",
+          "description": "valori ammessi: PROVINCIA_TN_CATASTO_FABBRICATO_PLANIMETRIA | PROVINCIA_TN_CATASTO_FABBRICATO_VISURA | PROVINCIA_TN_CATASTO_FONDIARIO_VISURA | PROVINCIA_TN_CATASTO_FONDIARIO_LIBRO"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoro"
+        }
+      },
+      "title": "ProvinciaTrentoCatastoDownloadRequest"
+    },
+    "ProvinciaTrentoCatastoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProvinciaTrentoCatastoDownloadResponseItem"
+          }
+        }
+      },
+      "title": "ProvinciaTrentoCatastoDownloadResponse"
+    },
+    "ProvinciaTrentoCatastoDownloadResponseItem": {
+      "type": "object",
+      "properties": {
+        "additionalInfo": {
+          "type": "object"
+        },
+        "base64Content": {
+          "type": "string"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "itemID": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "ProvinciaTrentoCatastoDownloadResponseItem"
+    },
+    "RequestWrapperOfCatastoDownloadRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/CatastoDownloadRequest"
+        }
+      },
+      "title": "RequestWrapperOfCatastoDownloadRequest"
+    },
+    "RequestWrapperOfCentraleRischiDownloadStep1Request": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/CentraleRischiDownloadStep1Request"
+        }
+      },
+      "title": "RequestWrapperOfCentraleRischiDownloadStep1Request"
+    },
+    "RequestWrapperOfCentraleRischiDownloadStep2Request": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/CentraleRischiDownloadStep2Request"
+        }
+      },
+      "title": "RequestWrapperOfCentraleRischiDownloadStep2Request"
+    },
+    "RequestWrapperOfConsumiEnergiaDownloadRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/ConsumiEnergiaDownloadRequest"
+        }
+      },
+      "title": "RequestWrapperOfConsumiEnergiaDownloadRequest"
+    },
+    "RequestWrapperOfContoContributivoDownloadRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/ContoContributivoDownloadRequest"
+        }
+      },
+      "title": "RequestWrapperOfContoContributivoDownloadRequest"
+    },
+    "RequestWrapperOfFolderRequestAuthorizeRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/FolderRequestAuthorizeRequest"
+        }
+      },
+      "title": "RequestWrapperOfFolderRequestAuthorizeRequest"
+    },
+    "RequestWrapperOfFolderRequestCreateRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/FolderRequestCreateRequest"
+        }
+      },
+      "title": "RequestWrapperOfFolderRequestCreateRequest"
+    },
+    "RequestWrapperOfFolderRequestDeleteRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/FolderRequestDeleteRequest"
+        }
+      },
+      "title": "RequestWrapperOfFolderRequestDeleteRequest"
+    },
+    "RequestWrapperOfFolderRequestDetailsRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/FolderRequestDetailsRequest"
+        }
+      },
+      "title": "RequestWrapperOfFolderRequestDetailsRequest"
+    },
+    "RequestWrapperOfFolderRequestStatusRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/FolderRequestStatusRequest"
+        }
+      },
+      "title": "RequestWrapperOfFolderRequestStatusRequest"
+    },
+    "RequestWrapperOfFolderRequestUserActivityDetailsRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/FolderRequestUserActivityDetailsRequest"
+        }
+      },
+      "title": "RequestWrapperOfFolderRequestUserActivityDetailsRequest"
+    },
+    "RequestWrapperOfProvinciaTrentoCatastoDownloadRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/ProvinciaTrentoCatastoDownloadRequest"
+        }
+      },
+      "title": "RequestWrapperOfProvinciaTrentoCatastoDownloadRequest"
+    },
+    "RequestWrapperOfTesseraSanitariaDownloadRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/TesseraSanitariaDownloadRequest"
+        }
+      },
+      "title": "RequestWrapperOfTesseraSanitariaDownloadRequest"
+    },
+    "RequestWrapperOfTokenizeCredentialCreateRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/TokenizeCredentialCreateRequest"
+        }
+      },
+      "title": "RequestWrapperOfTokenizeCredentialCreateRequest"
+    },
+    "RequestWrapperOfTokenizeCredentialDetailsRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/TokenizeCredentialDetailsRequest"
+        }
+      },
+      "title": "RequestWrapperOfTokenizeCredentialDetailsRequest"
+    },
+    "RequestWrapperOfTokenizeCredentialRequestCreateRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/TokenizeCredentialRequestCreateRequest"
+        }
+      },
+      "title": "RequestWrapperOfTokenizeCredentialRequestCreateRequest"
+    },
+    "RequestWrapperOfTokenizeCredentialRequestDetailsRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/TokenizeCredentialRequestDetailsRequest"
+        }
+      },
+      "title": "RequestWrapperOfTokenizeCredentialRequestDetailsRequest"
+    },
+    "RequestWrapperOfTokenizeCredentialRequestUserActivityDetailsRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/TokenizeCredentialRequestUserActivityDetailsRequest"
+        }
+      },
+      "title": "RequestWrapperOfTokenizeCredentialRequestUserActivityDetailsRequest"
+    },
+    "RequestWrapperOfUtenzeLavoroDownloadRequest": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/UtenzeLavoroDownloadRequest"
+        }
+      },
+      "title": "RequestWrapperOfUtenzeLavoroDownloadRequest"
+    },
+    "ResponseObjectOfCatastoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/CatastoDownloadResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfCatastoDownloadResponse"
+    },
+    "ResponseObjectOfCentraleRischiDownloadStep1Response": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/CentraleRischiDownloadStep1Response"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfCentraleRischiDownloadStep1Response"
+    },
+    "ResponseObjectOfCentraleRischiDownloadStep2Response": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/CentraleRischiDownloadStep2Response"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfCentraleRischiDownloadStep2Response"
+    },
+    "ResponseObjectOfConsumiEnergiaDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/ConsumiEnergiaDownloadResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfConsumiEnergiaDownloadResponse"
+    },
+    "ResponseObjectOfContoContributivoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/ContoContributivoDownloadResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfContoContributivoDownloadResponse"
+    },
+    "ResponseObjectOfFolderRequestAuthorizeResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/FolderRequestAuthorizeResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfFolderRequestAuthorizeResponse"
+    },
+    "ResponseObjectOfFolderRequestCreateResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/FolderRequestCreateResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfFolderRequestCreateResponse"
+    },
+    "ResponseObjectOfFolderRequestDeleteResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/FolderRequestDeleteResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfFolderRequestDeleteResponse"
+    },
+    "ResponseObjectOfFolderRequestDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/FolderRequestDetailsResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfFolderRequestDetailsResponse"
+    },
+    "ResponseObjectOfFolderRequestStatusResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/FolderRequestStatusResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfFolderRequestStatusResponse"
+    },
+    "ResponseObjectOfFolderRequestUserActivityDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/FolderRequestUserActivityDetailsResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfFolderRequestUserActivityDetailsResponse"
+    },
+    "ResponseObjectOfProvinciaTrentoCatastoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/ProvinciaTrentoCatastoDownloadResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfProvinciaTrentoCatastoDownloadResponse"
+    },
+    "ResponseObjectOfTesseraSanitariaDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/TesseraSanitariaDownloadResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfTesseraSanitariaDownloadResponse"
+    },
+    "ResponseObjectOfTokenizeCredentialCreateResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/TokenizeCredentialCreateResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfTokenizeCredentialCreateResponse"
+    },
+    "ResponseObjectOfTokenizeCredentialDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/TokenizeCredentialDetailsResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfTokenizeCredentialDetailsResponse"
+    },
+    "ResponseObjectOfTokenizeCredentialRequestCreateResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/TokenizeCredentialRequestCreateResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfTokenizeCredentialRequestCreateResponse"
+    },
+    "ResponseObjectOfTokenizeCredentialRequestDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/TokenizeCredentialRequestDetailsResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfTokenizeCredentialRequestDetailsResponse"
+    },
+    "ResponseObjectOfTokenizeCredentialRequestUserActivityDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/TokenizeCredentialRequestUserActivityDetailsResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfTokenizeCredentialRequestUserActivityDetailsResponse"
+    },
+    "ResponseObjectOfUtenzeLavoroDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/UtenzeLavoroDownloadResponse"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MessageBean"
+          }
+        },
+        "result": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseObjectOfUtenzeLavoroDownloadResponse"
+    },
+    "ResponseWrapperOfCatastoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfCatastoDownloadResponse"
+        }
+      },
+      "title": "ResponseWrapperOfCatastoDownloadResponse"
+    },
+    "ResponseWrapperOfCentraleRischiDownloadStep1Response": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfCentraleRischiDownloadStep1Response"
+        }
+      },
+      "title": "ResponseWrapperOfCentraleRischiDownloadStep1Response"
+    },
+    "ResponseWrapperOfCentraleRischiDownloadStep2Response": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfCentraleRischiDownloadStep2Response"
+        }
+      },
+      "title": "ResponseWrapperOfCentraleRischiDownloadStep2Response"
+    },
+    "ResponseWrapperOfConsumiEnergiaDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfConsumiEnergiaDownloadResponse"
+        }
+      },
+      "title": "ResponseWrapperOfConsumiEnergiaDownloadResponse"
+    },
+    "ResponseWrapperOfContoContributivoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfContoContributivoDownloadResponse"
+        }
+      },
+      "title": "ResponseWrapperOfContoContributivoDownloadResponse"
+    },
+    "ResponseWrapperOfFolderRequestAuthorizeResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfFolderRequestAuthorizeResponse"
+        }
+      },
+      "title": "ResponseWrapperOfFolderRequestAuthorizeResponse"
+    },
+    "ResponseWrapperOfFolderRequestCreateResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfFolderRequestCreateResponse"
+        }
+      },
+      "title": "ResponseWrapperOfFolderRequestCreateResponse"
+    },
+    "ResponseWrapperOfFolderRequestDeleteResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfFolderRequestDeleteResponse"
+        }
+      },
+      "title": "ResponseWrapperOfFolderRequestDeleteResponse"
+    },
+    "ResponseWrapperOfFolderRequestDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfFolderRequestDetailsResponse"
+        }
+      },
+      "title": "ResponseWrapperOfFolderRequestDetailsResponse"
+    },
+    "ResponseWrapperOfFolderRequestStatusResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfFolderRequestStatusResponse"
+        }
+      },
+      "title": "ResponseWrapperOfFolderRequestStatusResponse"
+    },
+    "ResponseWrapperOfFolderRequestUserActivityDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfFolderRequestUserActivityDetailsResponse"
+        }
+      },
+      "title": "ResponseWrapperOfFolderRequestUserActivityDetailsResponse"
+    },
+    "ResponseWrapperOfProvinciaTrentoCatastoDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfProvinciaTrentoCatastoDownloadResponse"
+        }
+      },
+      "title": "ResponseWrapperOfProvinciaTrentoCatastoDownloadResponse"
+    },
+    "ResponseWrapperOfTesseraSanitariaDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfTesseraSanitariaDownloadResponse"
+        }
+      },
+      "title": "ResponseWrapperOfTesseraSanitariaDownloadResponse"
+    },
+    "ResponseWrapperOfTokenizeCredentialCreateResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfTokenizeCredentialCreateResponse"
+        }
+      },
+      "title": "ResponseWrapperOfTokenizeCredentialCreateResponse"
+    },
+    "ResponseWrapperOfTokenizeCredentialDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfTokenizeCredentialDetailsResponse"
+        }
+      },
+      "title": "ResponseWrapperOfTokenizeCredentialDetailsResponse"
+    },
+    "ResponseWrapperOfTokenizeCredentialRequestCreateResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfTokenizeCredentialRequestCreateResponse"
+        }
+      },
+      "title": "ResponseWrapperOfTokenizeCredentialRequestCreateResponse"
+    },
+    "ResponseWrapperOfTokenizeCredentialRequestDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfTokenizeCredentialRequestDetailsResponse"
+        }
+      },
+      "title": "ResponseWrapperOfTokenizeCredentialRequestDetailsResponse"
+    },
+    "ResponseWrapperOfTokenizeCredentialRequestUserActivityDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfTokenizeCredentialRequestUserActivityDetailsResponse"
+        }
+      },
+      "title": "ResponseWrapperOfTokenizeCredentialRequestUserActivityDetailsResponse"
+    },
+    "ResponseWrapperOfUtenzeLavoroDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "$ref": "#/definitions/ResponseObjectOfUtenzeLavoroDownloadResponse"
+        }
+      },
+      "title": "ResponseWrapperOfUtenzeLavoroDownloadResponse"
+    },
+    "TesseraSanitariaDownloadRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "type",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "type": {
+          "type": "string",
+          "example": "TESSERA_SANITARIA",
+          "description": "valori ammessi: TESSERA_SANITARIA"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoro"
+        }
+      },
+      "title": "TesseraSanitariaDownloadRequest"
+    },
+    "TesseraSanitariaDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TesseraSanitariaDownloadResponseItem"
+          }
+        }
+      },
+      "title": "TesseraSanitariaDownloadResponse"
+    },
+    "TesseraSanitariaDownloadResponseItem": {
+      "type": "object",
+      "properties": {
+        "additionalInfo": {
+          "type": "object"
+        },
+        "base64Content": {
+          "type": "string"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "dateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "itemID": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "TesseraSanitariaDownloadResponseItem"
+    },
+    "TokenizeCredentialCreateRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "portalID",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "portalID": {
+          "type": "string",
+          "example": "AGENZIA_ENTRATE | IMPRESA_ITALIA | ANAGRAFE_NAZIONALE | PORTALE_CONSUMI | CIVIS",
+          "description": "identificativo del portale di riferimento [AGENZIA_ENTRATE, IMPRESA_ITALIA], esempio AGENZIA_ENTRATE"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoroAdE"
+        }
+      },
+      "title": "TokenizeCredentialCreateRequest"
+    },
+    "TokenizeCredentialCreateResponse": {
+      "type": "object",
+      "properties": {
+        "credenzialiAccesso": {
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "expirationDateTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "TokenizeCredentialCreateResponse"
+    },
+    "TokenizeCredentialDetailsRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute"
+      ],
+      "properties": {
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        }
+      },
+      "title": "TokenizeCredentialDetailsRequest"
+    },
+    "TokenizeCredentialDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "expirationDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "TokenizeCredentialDetailsResponse"
+    },
+    "TokenizeCredentialRequestCreateRequest": {
+      "type": "object",
+      "required": [
+        "finalita",
+        "institute",
+        "loginType",
+        "portalID",
+        "utenzaLavoro"
+      ],
+      "properties": {
+        "expirationDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "proprieta per indicare la data entro la quale la richiesta è valida. Nel caso in cui non viene specificato verranno presi come riferimento 30 giorni di validità. La richiesta sarà attiva fino alla mezzanotte della data inserita."
+        },
+        "finalita": {
+          "type": "string",
+          "example": "finalita",
+          "description": "finalità del trattamento"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "loginType": {
+          "type": "string",
+          "example": "FISCONLINE",
+          "description": "tipologia delle credenziali richieste [FISCONLINE, SPID], esempio FISCONLINE"
+        },
+        "notificationURL": {
+          "type": "string",
+          "example": "https://server2server.site/{token}/{tokenizeCredentialRequestStatus}",
+          "description": "proprieta per indicare l'url al quale notificare il partner l'esito della richiesta. Accetta in input dei placeholder tra cui: {token} e {tokenizeCredentialRequestStatus}."
+        },
+        "portalID": {
+          "type": "string",
+          "example": "AGENZIA_ENTRATE | IMPRESA_ITALIA | ANAGRAFE_NAZIONALE | PORTALE_CONSUMI | CIVIS",
+          "description": "identificativo del portale di riferimento [AGENZIA_ENTRATE, IMPRESA_ITALIA], esempio AGENZIA_ENTRATE"
+        },
+        "redirectURL": {
+          "type": "string",
+          "example": "https://webpartner.site/{token}/{tokenizeCredentialRequestStatus}",
+          "description": "proprieta per indicare l'url al quale effettuare il redirect del browser a completamento di un autorizzazione via interfaccia web. Accetta in input dei placeholder tra cui: {token} e {tokenizeCredentialRequestStatus}."
+        },
+        "utenteDescrizione": {
+          "type": "string",
+          "example": "utente",
+          "description": "descrizioni del utente"
+        },
+        "utenteEmail": {
+          "type": "string",
+          "example": "esempio@gmail.com",
+          "description": "email del utente"
+        },
+        "utenteLanguage": {
+          "type": "string",
+          "example": "it",
+          "description": "it | de | en"
+        },
+        "utenzaLavoro": {
+          "description": "Utenza di Lavoro",
+          "$ref": "#/definitions/UtenzaLavoroAdE"
+        }
+      },
+      "title": "TokenizeCredentialRequestCreateRequest"
+    },
+    "TokenizeCredentialRequestCreateResponse": {
+      "type": "object",
+      "properties": {
+        "expirationDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "tokenizeCredentialRequestToken": {
+          "type": "string"
+        },
+        "tokenizeCredentialRequestURL": {
+          "type": "string"
+        }
+      },
+      "title": "TokenizeCredentialRequestCreateResponse"
+    },
+    "TokenizeCredentialRequestDetailsRequest": {
+      "type": "object",
+      "required": [
+        "institute",
+        "tokenizeCredentialRequestToken"
+      ],
+      "properties": {
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "tokenizeCredentialRequestToken": {
+          "type": "string",
+          "example": "token",
+          "description": "identificativo univoco della richiesta creata, restituito dal servizio di creazione della richiesta"
+        }
+      },
+      "title": "TokenizeCredentialRequestDetailsRequest"
+    },
+    "TokenizeCredentialRequestDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "credenzialiAccesso": {
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "expirationDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "portalID": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "TokenizeCredentialRequestDetailsResponse"
+    },
+    "TokenizeCredentialRequestUserActivityDetailsRequest": {
+      "type": "object",
+      "required": [
+        "institute",
+        "tokenizeCredentialRequestToken"
+      ],
+      "properties": {
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "tokenizeCredentialRequestToken": {
+          "type": "string",
+          "example": "token",
+          "description": "identificativo univoco della richiesta creata, restituito dal servizio di creazione della richiesta"
+        }
+      },
+      "title": "TokenizeCredentialRequestUserActivityDetailsRequest"
+    },
+    "TokenizeCredentialRequestUserActivityDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserActivityAdditionalInfoBean"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "TokenizeCredentialRequestUserActivityDetailsResponse"
+    },
+    "UserActivityAdditionalInfoBean": {
+      "type": "object",
+      "properties": {
+        "userAction": {
+          "type": "string"
+        },
+        "userAgent": {
+          "type": "string"
+        },
+        "userIP": {
+          "type": "string"
+        },
+        "userSessionID": {
+          "type": "string"
+        },
+        "userTimestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "UserActivityAdditionalInfoBean"
+    },
+    "UtenzaLavoro": {
+      "type": "object",
+      "required": [
+        "codiceFiscale",
+        "partitaIva"
+      ],
+      "properties": {
+        "codiceFiscale": {
+          "type": "string",
+          "example": "03545678901",
+          "description": "codice fiscale dell'azienda"
+        },
+        "partitaIva": {
+          "type": "string",
+          "example": "03545678901",
+          "description": "partita iva dell'azienda"
+        }
+      },
+      "title": "UtenzaLavoro"
+    },
+    "UtenzaLavoroAdE": {
+      "type": "object",
+      "required": [
+        "codiceFiscale",
+        "partitaIva"
+      ],
+      "properties": {
+        "codiceFiscale": {
+          "type": "string",
+          "example": "03545678901",
+          "description": "codice fiscale dell'azienda"
+        },
+        "codiceFiscaleIncaricante": {
+          "type": "string",
+          "example": "03545678901",
+          "description": "codice fiscale del soggetto incaricante"
+        },
+        "partitaIva": {
+          "type": "string",
+          "example": "03545678901",
+          "description": "partita iva dell'azienda"
+        }
+      },
+      "title": "UtenzaLavoroAdE"
+    },
+    "UtenzaLavoroDownloadItem": {
+      "type": "object",
+      "properties": {
+        "codiceFiscale": {
+          "type": "string"
+        },
+        "partitaIva": {
+          "type": "string"
+        },
+        "sede": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "UtenzaLavoroDownloadItem"
+    },
+    "UtenzeLavoroDownloadRequest": {
+      "type": "object",
+      "required": [
+        "credenzialiAccesso",
+        "institute",
+        "serviceType"
+      ],
+      "properties": {
+        "codiceFiscaleIncaricante": {
+          "type": "string",
+          "example": "03545678901",
+          "description": "codice fiscale del soggetto incaricante"
+        },
+        "credenzialiAccesso": {
+          "description": "Credenziali di accesso",
+          "$ref": "#/definitions/CredenzialiAccesso"
+        },
+        "institute": {
+          "type": "string",
+          "description": "proprieta per indicare il codice abi dell'istituto, esempio 2272"
+        },
+        "serviceType": {
+          "type": "string",
+          "example": "FATTURAZIONE_ELETTRONICA",
+          "description": "tipologia di servizio richiesto, valori possibili FATTURAZIONE_ELETTRONICA o CASSETTO_FISCALE"
+        }
+      },
+      "title": "UtenzeLavoroDownloadRequest"
+    },
+    "UtenzeLavoroDownloadResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UtenzaLavoroDownloadItem"
+          }
+        },
+        "passwordExpirationDate": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "title": "UtenzeLavoroDownloadResponse"
+    }
+  }
+}
