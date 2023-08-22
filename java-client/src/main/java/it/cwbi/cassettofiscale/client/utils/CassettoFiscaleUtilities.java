@@ -1,12 +1,9 @@
 package it.cwbi.cassettofiscale.client.utils;
 
-import it.codiceweb.common.util.CWConstants;
-import it.codiceweb.common.util.CWSignatureUtils;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.security.cert.CertificateEncodingException;
@@ -33,11 +30,11 @@ public class CassettoFiscaleUtilities {
         return (X509Certificate) certificateFactory.generateCertificate(inputStream);
     }
 
-    public static String getThumbprint(X509Certificate cert) throws CertificateEncodingException {
-        return CWSignatureUtils.getThumbprint(cert.getEncoded(), CWConstants.ENCODING.BASE64, CWConstants.HASH.SHA256);
+    public static String getThumbprint(X509Certificate cert) throws CertificateEncodingException, NoSuchAlgorithmException {
+        return Base64.getEncoder().encodeToString(MessageDigest.getInstance("SHA-256").digest(cert.getEncoded()));
     }
 
-    public static String computeSignature(PrivateKey privateKey, String serializedRequest) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException, UnsupportedEncodingException {
+    public static String computeSignature(PrivateKey privateKey, String serializedRequest) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
         byte[] signedBytes = signWithPrivateKey(privateKey, serializedRequest.getBytes(StandardCharsets.UTF_8));
         return Base64.getEncoder().encodeToString(signedBytes);
     }
