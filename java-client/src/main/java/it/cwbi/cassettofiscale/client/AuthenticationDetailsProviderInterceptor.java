@@ -2,9 +2,6 @@ package it.cwbi.cassettofiscale.client;
 
 import com.squareup.okhttp.*;
 import it.cwbi.cassettofiscale.client.utils.CassettoFiscaleUtilities;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 import okio.Buffer;
 import org.apache.commons.io.IOUtils;
 
@@ -14,44 +11,55 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.security.cert.CertificateEncodingException;
 
-@Builder
-@Getter
-@Slf4j
 public class AuthenticationDetailsProviderInterceptor implements Interceptor {
 
-    private static final String POST_METHOD_NAME = "POST";
     private final CassettoFiscaleConfiguration cassettoFiscaleConfiguration;
+
+    public AuthenticationDetailsProviderInterceptor(CassettoFiscaleConfiguration cassettoFiscaleConfiguration) {
+        this.cassettoFiscaleConfiguration = cassettoFiscaleConfiguration;
+    }
+
+    public static class Builder {
+        private CassettoFiscaleConfiguration cassettoFiscaleConfiguration;
+
+        public Builder cassettoFiscaleConfiguration(CassettoFiscaleConfiguration cassettoFiscaleConfiguration) {
+            this.cassettoFiscaleConfiguration = cassettoFiscaleConfiguration;
+            return this;
+        }
+
+        public AuthenticationDetailsProviderInterceptor build() {
+            return new AuthenticationDetailsProviderInterceptor(cassettoFiscaleConfiguration);
+        }
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
 
     @Override
     public Response intercept(Chain chain) throws IOException {
 
-        Request oldRequest  = chain.request();
-        String method       = oldRequest.method();
-
-        if (!POST_METHOD_NAME.equals(method)) {
-            return chain.proceed(oldRequest);
-        }
-
+        Request oldRequest          = chain.request();
         RequestBody body            = oldRequest.body();
         String requestBody;
-        String signedRequestBody    = null;
+        String signedRequestBody;
 
         try (Buffer buffer = new Buffer()) {
             body.writeTo(buffer);
             requestBody = IOUtils.toString(buffer.inputStream());
         }
 
-        String thumbprint = null;
+        String thumbprint;
 
         try {
             signedRequestBody = CassettoFiscaleUtilities.computeSignature(cassettoFiscaleConfiguration.getPrivateKey(), requestBody);
         } catch (NoSuchAlgorithmException | SignatureException | InvalidKeyException exception) {
-            log.error("Could not sign request body", exception);
+            throw new AuthenticationDetailsProviderException("Could not sign request body", exception);
         }
 
-        Request newRequest = null;
-        try {
+        Request newRequest;
 
+        try {
             thumbprint = CassettoFiscaleUtilities.getThumbprint(cassettoFiscaleConfiguration.getCertificate());
 
             newRequest = oldRequest.newBuilder()
@@ -61,14 +69,23 @@ public class AuthenticationDetailsProviderInterceptor implements Interceptor {
                     .addHeader("X-Signature", signedRequestBody)
                     .post(RequestBody.create(MediaType.parse("application/json"), requestBody))
                 .build();
-        } catch (CertificateEncodingException exception) {
-            log.error("Fail", exception);
+        } catch (CertificateEncodingException | NoSuchAlgorithmException exception) {
+            throw new AuthenticationDetailsProviderException(exception);
         }
-
-        log.trace(String.format("%nrequestBody: %s%nsignedRequestBody: %s%nthumbprint: %s", requestBody, signedRequestBody, thumbprint));
 
         return chain.proceed(newRequest);
     }
 
+    private static class AuthenticationDetailsProviderException extends RuntimeException {
+
+        public AuthenticationDetailsProviderException(String message, Exception parentException) {
+            super(message, parentException);
+        }
+
+        public AuthenticationDetailsProviderException(Exception parentException) {
+            super(parentException);
+        }
+
+    }
 
 }
