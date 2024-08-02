@@ -3,7 +3,6 @@ package it.cwbi;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.api.V202301FolderRequestApiApi;
-import io.swagger.client.model.*;
 import it.cwbi.cassettofiscale.client.AuthenticationDetailsProviderInterceptor;
 import it.cwbi.cassettofiscale.client.CassettoFiscaleConfiguration;
 import it.cwbi.cassettofiscale.client.utils.CassettoFiscaleUtilities;
@@ -81,7 +80,7 @@ public class Main {
                         .build())
                 .build());
 
-            FolderRequestCreateRequest folderRequestCreateRequest = new FolderRequestCreateRequest();
+            io.swagger.client.model.FolderRequestCreateRequest folderRequestCreateRequest = new io.swagger.client.model.FolderRequestCreateRequest();
 
             folderRequestCreateRequest.setCompanyType("PF");
             folderRequestCreateRequest.setDescrizione("descrizione");
@@ -91,7 +90,7 @@ public class Main {
             folderRequestCreateRequest.setInstitute("2272");
             folderRequestCreateRequest.setItems(new LinkedList<>());
 
-            folderRequestCreateRequest.getItems().add(new FolderRequestCreateRequestItem()
+            folderRequestCreateRequest.getItems().add(new io.swagger.client.model.FolderRequestCreateRequestItem()
                     .fromDate(LocalDate.of(2020, 1, 1))
                     .toDate(LocalDate.now())
                     .type("FATTURA_EMESSA_ITA")
@@ -100,13 +99,13 @@ public class Main {
             folderRequestCreateRequest.setUtenteEmail("esempio@gmail.com");
             folderRequestCreateRequest.setUtenteLanguage("it");
 
-            folderRequestCreateRequest.setUtenzaLavoro(new UtenzaLavoroAdE());
+            folderRequestCreateRequest.setUtenzaLavoro(new io.swagger.client.model.UtenzaLavoroAdE());
             folderRequestCreateRequest.getUtenzaLavoro().setCodiceFiscale("03505120984");
             folderRequestCreateRequest.getUtenzaLavoro().setPartitaIva("03505120984");
 
             try {
-                FolderRequestCreateResponse folderRequestCreateResponse = v202301FolderRequestApiApi.folderRequestCreate1(
-                        new RequestWrapperOfFolderRequestCreateRequest().input(folderRequestCreateRequest)).getOutput().getBody();
+                io.swagger.client.model.FolderRequestCreateResponse folderRequestCreateResponse = v202301FolderRequestApiApi.folderRequestCreate1(
+                        new io.swagger.client.model.RequestWrapperOfFolderRequestCreateRequest().input(folderRequestCreateRequest)).getOutput().getBody();
                 System.out.println(folderRequestCreateResponse);
             } catch (ApiException e) {
                 int code = e.getCode();
